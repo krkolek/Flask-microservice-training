@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users Management</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class=flashes>
+            {% for category, message in messages %}
+                <div class="{{ category }}">{{ message }}</div>
+            {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <input type="checkbox" name="toggle" id="toggle" />
+    <label for="toggle"></label>
+
+    <div class="container">
+        <form id="add_user">
+            <input id="id_name" placeholder="add user">
+            <input type="submit" value="ADD" style="background-color: LightGreen">
+        </form>
+
+        <table id="table_of_users">
+            <tr>
+                <th id="th_name">User</th><th id="th_delete">Delete</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="settings">
+        <h3>Settings</h3>
+        <form method="post">
+            {{ form.api_url.label }} {{ form.api_url(size=20) }}
+            <input type="submit" value="SAVE" style="background-color: Moccasin ">
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/helpers.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    <script> window.onload = load_users; </script>
+</body>
+</html>
