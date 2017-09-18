@@ -1,4 +1,5 @@
-This project contains Rest microservice written in Flask for managing users.
+This project contains website written in Flask which communicates by AJAX with users microservice.
+On this site can add/load/removed users and managing site-settings.
 
 ## Instalation
 Go to project directory and then:
@@ -12,8 +13,3 @@ Set enviroment variable USERS_CONFIG with one of values:
 
 Then `python manage.py migrate` for run application
 or `python manage.py test` run tests.
-
-## Endpoints:
-* GET /users - gets list of all users
-* POST /users - add new user in format `{"name": "John Smith"}`
-* GET /users/<user_id>  - remove user by his id

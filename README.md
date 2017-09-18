@@ -1,12 +1,5 @@
+This repository contains two different projects. Inside each of them are instructions on how to install and run project.
+
 ## Requirements
 * Python 2.7
-
-## Instalation
-Go to project directory and then:
-`pip install -r requirements.txt`
-`python manage.py migrate`
-
-## Endpoints:
-#### **POST** */register*
-
-#### **POST** */login*
+* MongoDB 3.4
